@@ -117,7 +117,7 @@ module.exports.createOption = async (req, res) => {
     const option = await Option.create(req.body);
 
     // Add voting link of an option
-    option.linkToVote = `http://localhost:8000/api/v1/options/${option._id}/add_vote`;
+    option.linkToVote = `https://polling-api-cn.herokuapp.com/api/v1/options/${option._id}/add_vote`;
     await option.save();
 
     question.options.push(option);
